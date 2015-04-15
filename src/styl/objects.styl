@@ -1,0 +1,115 @@
+.cl,.row
+ *zoom: 1
+.cl:before,.row:before,.cl:after,.row:after
+ content ""
+ display table
+.cl:after,.row:after
+ clear both
+.cn
+ margin 0 auto
+ position relative
+ width 980px
+.gl 
+ height 100%
+ position relative 
+ width 100%
+.img_resp
+ display block
+ height auto
+ max-width 100%
+ width auto
+ width 100%  
+.ul_main
+ list-style none
+ margin 0
+ padding 0
+ li
+  display block
+ a
+  text-decoration none
+  &:hover
+   text-decoration none
+.ul_main_float
+ li
+  float left
+.ul_main_center
+ text-align center	
+ li
+  display inline-block
+.table_vertical,.table_horizontal,.table_bordered
+  border 1px solid border_1
+.table_vertical
+  th,td
+   border-left 1px solid border_1 
+  th:first-child,td:first-child
+   border-left none  
+.table_horizontal
+  td
+   border-top 1px solid border_1     
+.table_bordered
+  th,td
+   border-left 1px solid border_1 
+  th:first-child,td:first-child
+   border-left none   
+  td
+   border-top 1px solid border_1
+.table_striped
+ tbody
+  tr
+   background bg_1
+  tr:nth-child(2n-1)
+   background bg_1     
+.table_hover
+ tbody
+  tr
+   &:hover 
+    background bg_1
+.btn
+ background bg_1
+ color color_1
+ cursor pointer
+ display block
+ font 1.1em/2.3em font_1
+ text-align center
+ text-transform uppercase
+ width 100%
+ transition(0.3s)
+.form_inline
+ .form_group
+  margin 0 5px 0 0
+  input
+   margin 0 
+ .checkbox,.radio
+  margin 8px 5px 0 0        
+ .btn
+  margin 0 
+ .form_group,.checkbox,.radio,.btn
+  float left
+.form_horizontal
+ .form_group
+  label,input 
+   float left 
+  label
+   margin 0 5px 0 0
+   line-height 2.2em
+   text-align right 
+   width 15%
+  input
+   margin 0 
+   width 60%   
+.form_group_inline 
+ .checkbox,.radio
+  float left    
+  margin 0 8px 0 0
+
+.preloader
+ absolute 50% false false 50%
+ size 36px
+ margin -18px 0 0 -18px 
+ border 3px solid border_2
+ border-radius: 50%
+ border-color transparent border_2
+ animation rot 1s linear infinite
+@keyframes rot
+  to
+   transform rotate(-360deg) 

@@ -1,0 +1,22 @@
+$casa = 0px 0px 13px 13px
+
+sprite-width($sprite)
+  width $sprite[2]
+
+sprite-height($sprite)
+  height $sprite[3]
+
+sprite-position($sprite)
+  background-position $sprite[0]  $sprite[1]
+
+sprite($sprite)
+  sprite-position($sprite)
+  background-repeat no-repeat
+  overflow hidden
+  display block
+  sprite-width($sprite)
+  sprite-height($sprite)
+
+.ic
+  background-image url('../img-sprites.png')
+
