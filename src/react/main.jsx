@@ -156,10 +156,31 @@ var App = React.createClass({
 });
 var WeatherList = React.createClass({
   render:function(){
+    var cx = React.addons.classSet;
+    var classes = cx({
+      'rain sun': this.props.data.icon==='01d',
+      'rain sun': this.props.data.icon==='01n',
+      'rain sun': this.props.data.icon==='02d',
+      'rain sun': this.props.data.icon==='02n',
+      'rain sun': this.props.data.icon==='03d',
+      'rain sun': this.props.data.icon==='03n',
+      'rain sun': this.props.data.icon==='04d',
+      'rain sun': this.props.data.icon==='04n',
+      'rain sun': this.props.data.icon==='09d',
+      'rain sun': this.props.data.icon==='09n',
+      'rain sun': this.props.data.icon==='10d',
+      'rain moon': this.props.data.icon==='10n',
+      'rain sun': this.props.data.icon==='11d',
+      'rain sun': this.props.data.icon==='11n',
+      'rain sun': this.props.data.icon==='13d',
+      'rain sun': this.props.data.icon==='13n',
+      'rain sun': this.props.data.icon==='50d',
+      'rain sun': this.props.data.icon==='50n'
+    });
     return (
         <li onClick={this.props.onClick} className={this.props.selected ? "selected" : ""}>
            <span className="week_name">{this.props.data.abbreviation_week}</span>
-           <div className={this.props.data.icon + ' iconweather'}></div>
+           <div className={classes + ' iconweather climacon'}></div>
            <div className="celsius_maxmin">
              <span>{this.props.data.celsius_max + "°"}</span>
              <span>{this.props.data.celsius_min + "°"}</span>
@@ -171,12 +192,12 @@ var WeatherList = React.createClass({
 var Weatherinfo = React.createClass({
   render:function(){
     return (
-      <div>
-        <header>
-           <h1>{this.props.city_name}, <strong>{this.props.city_country}</strong></h1>
-           <span>{this.props.week_name}</span>
+      <div className="info_weather">
+        <header className="header_weather">
+           <h1>{this.props.city_name +','}<strong>{this.props.city_country}</strong></h1>
+           <p><strong>{this.props.week_name}</strong></p>
         </header>
-        <div className={this.props.icon_weather + ' iconweather'}></div>
+        <div className={this.props.icon_weather + ' iconweather climacon rain moon'}></div>
         <div className="celsius_maxmin">
           <span>{this.props.celsius_max + "°C"}</span>
           <span>/</span>

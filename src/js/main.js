@@ -156,10 +156,31 @@ var App = React.createClass({displayName: "App",
 });
 var WeatherList = React.createClass({displayName: "WeatherList",
   render:function(){
+    var cx = React.addons.classSet;
+    var classes = cx({
+      'rain sun': this.props.data.icon==='01d',
+      'rain sun': this.props.data.icon==='01n',
+      'rain sun': this.props.data.icon==='02d',
+      'rain sun': this.props.data.icon==='02n',
+      'rain sun': this.props.data.icon==='03d',
+      'rain sun': this.props.data.icon==='03n',
+      'rain sun': this.props.data.icon==='04d',
+      'rain sun': this.props.data.icon==='04n',
+      'rain sun': this.props.data.icon==='09d',
+      'rain sun': this.props.data.icon==='09n',
+      'rain sun': this.props.data.icon==='10d',
+      'rain moon': this.props.data.icon==='10n',
+      'rain sun': this.props.data.icon==='11d',
+      'rain sun': this.props.data.icon==='11n',
+      'rain sun': this.props.data.icon==='13d',
+      'rain sun': this.props.data.icon==='13n',
+      'rain sun': this.props.data.icon==='50d',
+      'rain sun': this.props.data.icon==='50n'
+    });
     return (
         React.createElement("li", {onClick: this.props.onClick, className: this.props.selected ? "selected" : ""}, 
            React.createElement("span", {className: "week_name"}, this.props.data.abbreviation_week), 
-           React.createElement("div", {className: this.props.data.icon + ' iconweather'}), 
+           React.createElement("div", {className: classes + ' iconweather climacon'}), 
            React.createElement("div", {className: "celsius_maxmin"}, 
              React.createElement("span", null, this.props.data.celsius_max + "°"), 
              React.createElement("span", null, this.props.data.celsius_min + "°")
@@ -171,12 +192,12 @@ var WeatherList = React.createClass({displayName: "WeatherList",
 var Weatherinfo = React.createClass({displayName: "Weatherinfo",
   render:function(){
     return (
-      React.createElement("div", null, 
-        React.createElement("header", null, 
-           React.createElement("h1", null, this.props.city_name, ", ", React.createElement("strong", null, this.props.city_country)), 
-           React.createElement("span", null, this.props.week_name)
+      React.createElement("div", {className: "info_weather"}, 
+        React.createElement("header", {className: "header_weather"}, 
+           React.createElement("h1", null, this.props.city_name +',', React.createElement("strong", null, this.props.city_country)), 
+           React.createElement("p", null, React.createElement("strong", null, this.props.week_name))
         ), 
-        React.createElement("div", {className: this.props.icon_weather + ' iconweather'}), 
+        React.createElement("div", {className: this.props.icon_weather + ' iconweather climacon rain moon'}), 
         React.createElement("div", {className: "celsius_maxmin"}, 
           React.createElement("span", null, this.props.celsius_max + "°C"), 
           React.createElement("span", null, "/"), 
