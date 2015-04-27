@@ -3293,24 +3293,24 @@ var WeatherList = React.createClass({displayName: "WeatherList",
   render:function(){
     var cx = React.addons.classSet;
     var classes = cx({
-      'rain sun': this.props.data.icon==='01d',
-      'rain sun': this.props.data.icon==='01n',
-      'rain sun': this.props.data.icon==='02d',
-      'rain sun': this.props.data.icon==='02n',
-      'rain sun': this.props.data.icon==='03d',
-      'rain sun': this.props.data.icon==='03n',
-      'rain sun': this.props.data.icon==='04d',
-      'rain sun': this.props.data.icon==='04n',
-      'rain sun': this.props.data.icon==='09d',
-      'rain sun': this.props.data.icon==='09n',
+      'sun': this.props.data.icon==='01d',
+      'moon': this.props.data.icon==='01n',
+      'cloud sun': this.props.data.icon==='02d',
+      'cloud moon': this.props.data.icon==='02n',
+      'cloud': this.props.data.icon==='03d',
+      'cloud': this.props.data.icon==='03n',
+      'cloud wind': this.props.data.icon==='04d',
+      'cloud wind': this.props.data.icon==='04n',
+      'rain': this.props.data.icon==='09d',
+      'rain': this.props.data.icon==='09n',
       'rain sun': this.props.data.icon==='10d',
       'rain moon': this.props.data.icon==='10n',
-      'rain sun': this.props.data.icon==='11d',
-      'rain sun': this.props.data.icon==='11n',
-      'rain sun': this.props.data.icon==='13d',
-      'rain sun': this.props.data.icon==='13n',
-      'rain sun': this.props.data.icon==='50d',
-      'rain sun': this.props.data.icon==='50n'
+      'lightning sun': this.props.data.icon==='11d',
+      'lightning moon': this.props.data.icon==='11n',
+      'snow sun': this.props.data.icon==='13d',
+      'snow moon': this.props.data.icon==='13n',
+      'fog sun': this.props.data.icon==='50d',
+      'fog moon': this.props.data.icon==='50n'
     });
     return (
         React.createElement("li", {onClick: this.props.onClick, className: this.props.selected ? "selected" : ""}, 
@@ -3326,13 +3326,34 @@ var WeatherList = React.createClass({displayName: "WeatherList",
 });
 var Weatherinfo = React.createClass({displayName: "Weatherinfo",
   render:function(){
+    var cx = React.addons.classSet;
+    var classes = cx({
+      'sun': this.props.icon_weather==='01d',
+      'moon': this.props.icon_weather==='01n',
+      'cloud sun': this.props.icon_weather==='02d',
+      'cloud moon': this.props.icon_weather==='02n',
+      'cloud': this.props.icon_weather==='03d',
+      'cloud': this.props.icon_weather==='03n',
+      'cloud wind': this.props.icon_weather==='04d',
+      'cloud wind': this.props.icon_weather==='04n',
+      'rain': this.props.icon_weather==='09d',
+      'rain': this.props.icon_weather==='09n',
+      'rain sun': this.props.icon_weather==='10d',
+      'rain moon': this.props.icon_weather==='10n',
+      'lightning sun': this.props.icon_weather==='11d',
+      'lightning moon': this.props.icon_weather==='11n',
+      'snow sun': this.props.icon_weather==='13d',
+      'snow moon': this.props.icon_weather==='13n',
+      'fog sun': this.props.icon_weather==='50d',
+      'fog moon': this.props.icon_weather==='50n'
+    });
     return (
       React.createElement("div", {className: "info_weather"}, 
         React.createElement("header", {className: "header_weather"}, 
            React.createElement("h1", null, this.props.city_name +',', React.createElement("strong", null, this.props.city_country)), 
            React.createElement("p", null, React.createElement("strong", null, this.props.week_name))
         ), 
-        React.createElement("div", {className: this.props.icon_weather + ' iconweather climacon rain moon'}), 
+        React.createElement("div", {className: classes + ' iconweather climacon'}), 
         React.createElement("div", {className: "celsius_maxmin"}, 
           React.createElement("span", null, this.props.celsius_max + "°C"), 
           React.createElement("span", null, "/"), 
