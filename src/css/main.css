@@ -59,7 +59,7 @@ body {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 body {
-  background: #c0392b;
+  background: #000;
   font-family: ubuntu_light;
   font-size: 14px;
   width: 100%;
@@ -340,16 +340,16 @@ button {
   border-top: 1px solid #e8e8e8;
 }
 .table_striped tbody tr {
-  background: #fff;
+  background: #fe5621;
 }
 .table_striped tbody tr:nth-child(2n-1) {
-  background: #fff;
+  background: #fe5621;
 }
 .table_hover tbody tr:hover {
-  background: #fff;
+  background: #fe5621;
 }
 .btn {
-  background: #fff;
+  background: #fe5621;
   color: #000;
   cursor: pointer;
   display: block;
@@ -408,13 +408,13 @@ button {
   width: 36px;
   height: 36px;
   margin: -18px 0 0 -18px;
-  border: 3px solid #ecf0f1;
+  border: 3px solid #fe5621;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  border-color: transparent #ecf0f1;
+  border-color: transparent #fe5621;
   -webkit-animation: rot 1s linear infinite;
   animation: rot 1s linear infinite;
 }
@@ -458,9 +458,9 @@ button {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: -150px 0 0 -150px;
+  margin: -125px 0 0 -150px;
   width: 300px;
-  height: 300px;
+  height: 250px;
 }
 .weather,
 .weatherin {
@@ -470,28 +470,73 @@ button {
 .weather {
   position: relative;
 }
-.weatherin {
-  background: #fff;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-  border-radius: 10px;
-}
+.weatherin,
 .header_weather {
   padding: 5px 0 0 0;
 }
+.weatherin h1,
 .header_weather h1,
-.header_weather p {
+.weatherin p,
+.header_weather p,
+.weatherin span,
+.header_weather span {
+  color: #fe5621;
   text-align: center;
 }
+.weatherin h1,
 .header_weather h1 {
   font-size: 1.2em;
 }
 .info_weather .iconweather {
+  color: #fe5621;
   font-size: 6em;
+  line-height: 1.3em;
   margin: 10px 0 0 0;
   text-align: center;
+}
+.info_weather .celsius_maxmin {
+  text-align: center;
+}
+.info_weather .celsius_maxmin span {
+  color: #fe5621;
+  font: 1.3em/1.2em ubuntu_regular;
+}
+.ul_weather {
+  margin: 6px 0 0 0;
+  width: 100%;
+  height: 60px;
+}
+.ul_weather li,
+.ul_weather span {
+  color: #fe5621;
+}
+.ul_weather li {
+  cursor: pointer;
+  width: 14.285714286%;
+  text-align: center;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.ul_weather .iconweather {
+  font-size: 1.4em;
+  margin: 2px 0 0 0;
+}
+.ul_weather .celsius_maxmin {
+  line-height: 1.2em;
+  margin: 3px 0 0 0;
+}
+.ul_weather .celsius_maxmin span {
+  font-size: 0.9em;
+}
+.ul_weather .selected,
+.ul_weather .selected span {
+  color: #000;
+}
+.ul_weather .selected {
+  background: #fe5621;
 }
 .hidden {
   display: none;

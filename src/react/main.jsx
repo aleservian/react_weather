@@ -141,7 +141,7 @@ var App = React.createClass({
               icon_weather={this.state.icon_weather}
               celsius_max={this.state.celsius_max}
               celsius_min={this.state.celsius_min}/>
-           <ul className="ul_main ul_weather">
+           <ul className="ul_main ul_main_float ul_weather cl">
              {this.state.data.map(function(item,i){
               var transferProps = _this.transferProps.bind(this, item, i);
                return (
@@ -182,8 +182,7 @@ var WeatherList = React.createClass({
            <span className="week_name">{this.props.data.abbreviation_week}</span>
            <div className={classes + ' iconweather climacon'}></div>
            <div className="celsius_maxmin">
-             <span>{this.props.data.celsius_max + "°"}</span>
-             <span>{this.props.data.celsius_min + "°"}</span>
+             <span>{this.props.data.celsius_max + "°" + this.props.data.celsius_min + "°"}</span>
            </div>
         </li>
     )
@@ -220,9 +219,7 @@ var Weatherinfo = React.createClass({
         </header>
         <div className={classes + ' iconweather climacon'}></div>
         <div className="celsius_maxmin">
-          <span>{this.props.celsius_max + "°C"}</span>
-          <span>/</span>
-          <span>{this.props.celsius_min + "°C"}</span>
+          <span>{this.props.celsius_max + "°C" + ' / ' + this.props.celsius_min + "°C"}</span>
         </div>
       </div>
     )

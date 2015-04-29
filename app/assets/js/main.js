@@ -3276,7 +3276,7 @@ var App = React.createClass({displayName: "App",
               icon_weather: this.state.icon_weather, 
               celsius_max: this.state.celsius_max, 
               celsius_min: this.state.celsius_min}), 
-           React.createElement("ul", {className: "ul_main ul_weather"}, 
+           React.createElement("ul", {className: "ul_main ul_main_float ul_weather cl"}, 
              this.state.data.map(function(item,i){
               var transferProps = _this.transferProps.bind(this, item, i);
                return (
@@ -3317,8 +3317,7 @@ var WeatherList = React.createClass({displayName: "WeatherList",
            React.createElement("span", {className: "week_name"}, this.props.data.abbreviation_week), 
            React.createElement("div", {className: classes + ' iconweather climacon'}), 
            React.createElement("div", {className: "celsius_maxmin"}, 
-             React.createElement("span", null, this.props.data.celsius_max + "°"), 
-             React.createElement("span", null, this.props.data.celsius_min + "°")
+             React.createElement("span", null, this.props.data.celsius_max + "°" + this.props.data.celsius_min + "°")
            )
         )
     )
@@ -3355,9 +3354,7 @@ var Weatherinfo = React.createClass({displayName: "Weatherinfo",
         ), 
         React.createElement("div", {className: classes + ' iconweather climacon'}), 
         React.createElement("div", {className: "celsius_maxmin"}, 
-          React.createElement("span", null, this.props.celsius_max + "°C"), 
-          React.createElement("span", null, "/"), 
-          React.createElement("span", null, this.props.celsius_min + "°C")
+          React.createElement("span", null, this.props.celsius_max + "°C" + ' / ' + this.props.celsius_min + "°C")
         )
       )
     )

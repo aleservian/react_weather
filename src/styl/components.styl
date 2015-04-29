@@ -1,23 +1,51 @@
 //APP
 .app
  absolute 50% false false 50%
- margin -150px 0 0 -150px	
- size 300px
+ margin -125px 0 0 -150px	
+ size 300px 250px
 .weather,.weatherin
  size 100%	
 .weather
  position relative	
 .weatherin
- background bg_1	
- border-radius 10px
 .header_weather
  padding 5px 0 0 0	
- h1,p 
+ h1,p,span
+  color color_2
   text-align center	
  h1 
   font-size 1.2em
 .info_weather
  .iconweather
+  color color_2
   font-size 6em
+  line-height 1.3em
   margin 10px 0 0 0
   text-align center
+ .celsius_maxmin
+  text-align center	 
+  span
+   color color_2	
+   font 1.3em/1.2em ubuntu_regular
+.ul_weather
+ margin 6px 0 0 0	
+ size 100% 60px
+ li,span
+  color color_2	
+ li 
+  cursor pointer	
+  size 14.285714286% false	   
+  text-align center
+  transition(0.3s)
+ .iconweather
+  font-size 1.4em	 
+  margin 2px 0 0 0
+ .celsius_maxmin
+  line-height 1.2em	
+  margin 3px 0 0 0	 
+  span
+   font-size 0.9em	
+ .selected,.selected span
+  color color_1	  
+ .selected
+  background bg_1 
